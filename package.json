@@ -1,18 +1,17 @@
 {
-  "name": "vue-echarts",
-  "version": "6.1.0",
+  "name": "vue3-echarts-pkg",
+  "version": "2.0.0",
   "description": "Vue.js component for Apache ECharts.",
-  "author": "GU Yiling <justice360@gmail.com>",
+  "author": "RocWong <me@rocwong.cn>",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "pnpm run docs && rimraf dist && pnpm run build:2 && pnpm run build:3 && vue-demi-switch 3",
-    "build:2": "vue-demi-switch 2 vue2 && rollup -c rollup.vue2.config.js",
+    "build": "npm run docs && rimraf dist && npm run build:3 && vue-demi-switch 3",
     "build:3": "vue-demi-switch 3 && rollup -c rollup.config.js",
     "lint": "vue-cli-service lint",
     "build:demo": "vue-cli-service build",
     "docs": "node -r esm ./scripts/docs.js",
     "postinstall": "node ./scripts/postinstall.js",
-    "prepare": "pnpm run build"
+    "prepare": "npm run build"
   },
   "main": "dist/index.cjs.min.js",
   "module": "dist/index.esm.min.js",
@@ -22,6 +21,7 @@
     "scripts/postinstall.js"
   ],
   "dependencies": {
+    "global": "^4.4.0",
     "resize-detector": "^0.3.0",
     "vue-demi": "^0.12.5"
   },
@@ -35,7 +35,6 @@
     "@vue/cli-plugin-typescript": "^5.0.4",
     "@vue/cli-service": "^5.0.4",
     "@vue/compiler-sfc": "^3.2.33",
-    "@vue/composition-api": "^1.6.1",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^10.0.0",
     "codesandbox": "^2.2.3",
@@ -61,21 +60,14 @@
     "tslib": "^2.4.0",
     "typescript": "4.6.4",
     "vue": "^3.2.33",
-    "vue2": "npm:vue@^2.6.14",
     "webpack": "^5.72.1"
   },
   "peerDependencies": {
-    "@vue/composition-api": "^1.0.5",
     "echarts": "^5.1.2",
-    "vue": "^2.6.12 || ^3.1.1"
+    "vue": "^3.1.1"
   },
   "jsdelivr": "dist/index.umd.min.js",
   "license": "MIT",
-  "peerDependenciesMeta": {
-    "@vue/composition-api": {
-      "optional": true
-    }
-  },
   "repository": "https://github.com/ecomfe/vue-echarts.git",
   "types": "dist/index.d.ts"
 }
